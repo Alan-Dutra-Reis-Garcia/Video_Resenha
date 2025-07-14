@@ -2,57 +2,124 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Roteiro - Vídeo-Resenha: Obrigado por Fumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Roteiro - Vídeo-Resenha: Obrigado por Fumar</title>
   <style>
+    /* Variáveis CSS (opcional, mas bom para manutenção) */
+    :root {
+      --cor-principal: #003366;
+      --cor-fundo: #f4f4f4;
+      --cor-texto: #333;
+      --cor-bloco-fundo: #ffffff;
+      --cor-borda-destaque: #003366;
+      --cor-tempo: #555;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
+      margin: 2.5em; /* Ajustado para unidade relativa */
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
       line-height: 1.7;
     }
+
     h1, h2 {
-      color: #003366;
+      color: var(--cor-principal);
       text-align: center;
+      margin-bottom: 0.5em;
     }
+
+    h1 {
+        font-size: 2.2em; /* Exemplo de ajuste de tamanho */
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        margin-bottom: 1em; /* Espaçamento entre parágrafos */
+    }
+
+    p:last-child {
+        margin-bottom: 0; /* Remove margem do último parágrafo em um bloco */
+    }
+
+    .info-disciplina {
+      text-align: center;
+      margin-bottom: 2em;
+      font-size: 0.95em;
+    }
+
     .bloco {
-      background: #ffffff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background: var(--cor-bloco-fundo);
+      padding: 1.5em; /* Ajustado */
+      border-left: 5px solid var(--cor-borda-destaque);
+      margin-bottom: 1.8em; /* Ajustado */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Sombra mais suave */
+      border-radius: 4px; /* Cantos levemente arredondados */
     }
+
     .tempo {
       font-weight: bold;
-      color: #555;
+      color: var(--cor-tempo);
+      margin-bottom: 0.8em; /* Espaço após o tempo */
+      display: block; /* Garante que 'tempo' ocupe sua própria linha */
     }
-    .filme, .audio {
-      background-color: #fff;
-      padding: 20px;
-      border: 2px dashed #003366;
-      margin-bottom: 30px;
+
+    .media-container {
+      background-color: var(--cor-bloco-fundo);
+      padding: 1.5em;
+      border: 2px dashed var(--cor-borda-destaque);
+      margin-bottom: 2em;
       text-align: center;
-      box-shadow: 0 0 8px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 4px;
     }
-    video {
+
+    /* Contêiner para vídeo/iframe responsivo */
+    .video-responsive-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000; /* Fundo preto para preencher enquanto carrega */
+      margin-top: 1em;
+    }
+
+    .video-responsive-container iframe,
+    .video-responsive-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 720px;
-      height: auto;
-      margin-top: 10px;
+      height: 100%;
+      border: 0; /* Remove a borda padrão do iframe */
     }
-    iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 80px;
-      border: none;
-      margin: 10px auto 0 auto;
-      display: block;
-    }
+
     footer {
-      margin-top: 40px;
+      margin-top: 3em; /* Ajustado */
       text-align: center;
       font-size: 0.9em;
       color: #777;
+      padding-top: 1em;
+      border-top: 1px solid #eee; /* Linha sutil antes do rodapé */
+    }
+
+    /* Pequenos ajustes para telas muito pequenas */
+    @media (max-width: 600px) {
+        body {
+            margin: 1em; /* Margem menor em telas pequenas */
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        h2 {
+            font-size: 1.4em;
+        }
+        .bloco {
+            padding: 1em;
+        }
     }
   </style>
 </head>
@@ -60,20 +127,22 @@
 
   <h1>Roteiro – Vídeo-Resenha</h1>
   <h2>“Obrigado por Fumar” (2007)</h2>
-  <p style="text-align:center;"><strong>Disciplina:</strong> Geografia das Indústrias &nbsp;|&nbsp; <strong>Entrega:</strong> 31/05/2025<br>
-  <strong>Alunos:</strong> Alan Dutra, Eduardo Savio, Enrico Cedaro</p>
+  <p class="info-disciplina"><strong>Disciplina:</strong> Geografia das Indústrias &nbsp;|&nbsp; <strong>Entrega:</strong> 31/05/2025</p>
 
-  <div class="filme">
+  <div class="media-container">
     <h3>Assista o Filme</h3>
-    <video controls>
-      <source src="https://ia600606.us.archive.org/12/items/ObrigadoporFumar/ObrigadoporFumar.mp4" type="video/mp4">
-      Seu navegador não suporta o elemento de vídeo.
-    </video>
+    <div class="video-responsive-container">
+      <video controls>
+        <source src="https://ia600606.us.archive.org/12/items/ObrigadoporFumar/ObrigadoporFumar.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
   </div>
 
-  <div class="audio">
-    <h3>Resenha - Áudio</h3>
-    <iframe src="https://audio-vercel.vercel.app/" allow="autoplay"></iframe>
+  <div class="media-container">
+    <h3>Resenha - Vídeo/Áudio</h3>
+    <div class="video-responsive-container">
+      <iframe src="https://videoresenhamp.vercel.app" allow="autoplay; fullscreen; picture-in-picture"></iframe> </div>
   </div>
 
   <div class="bloco">
