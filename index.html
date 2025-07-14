@@ -2,31 +2,197 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Reprodução de Vídeo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roteiro - Vídeo-Resenha: Obrigado por Fumar</title>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
+    /* Variáveis CSS (opcional, mas bom para manutenção) */
+    :root {
+      --cor-principal: #003366;
+      --cor-fundo: #f4f4f4;
+      --cor-texto: #333;
+      --cor-bloco-fundo: #ffffff;
+      --cor-borda-destaque: #003366;
+      --cor-tempo: #555;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2.5em; /* Ajustado para unidade relativa */
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.7;
+    }
+
+    h1, h2 {
+      color: var(--cor-principal);
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-disciplina {
+      text-align: center;
+      margin-bottom: 2em;
+      font-size: 0.95em;
+    }
+
+    .bloco {
+      background: var(--cor-bloco-fundo);
+      padding: 1.5em;
+      border-left: 5px solid var(--cor-borda-destaque);
+      margin-bottom: 1.8em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-radius: 4px;
+    }
+
+    .tempo {
+      font-weight: bold;
+      color: var(--cor-tempo);
+      margin-bottom: 0.8em;
+      display: block;
+    }
+
+    .media-container {
+      background-color: var(--cor-bloco-fundo);
+      padding: 1.5em;
+      border: 2px dashed var(--cor-borda-destaque);
+      margin-bottom: 2em;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+
+    /* Contêiner para vídeo responsivo (serve para ambos os vídeos agora) */
+    .video-responsive-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin-top: 1em;
+    }
+
+    .video-responsive-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Hides scrollbars if content overflows */
+      border: 0;
     }
-    video {
-      position: fixed; /* Stays in place when scrolling */
-      right: 0;
-      bottom: 0;
-      min-width: 100%; /* Ensures video covers at least 100% width */
-      min-height: 100%; /* Ensures video covers at least 100% height */
-      width: auto;
-      height: auto;
-      z-index: -100; /* Puts video behind other content */
-      background-size: cover; /* Ensures video scales nicely */
+
+    footer {
+      margin-top: 3em;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      padding-top: 1em;
+      border-top: 1px solid #eee;
+    }
+
+    /* Pequenos ajustes para telas muito pequenas */
+    @media (max-width: 600px) {
+        body {
+            margin: 1em;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        h2 {
+            font-size: 1.4em;
+        }
+        .bloco {
+            padding: 1em;
+        }
     }
   </style>
 </head>
 <body>
-  <video controls autoplay muted loop> <source src="seu_video.mp4" type="video/mp4">
-    Seu navegador não suporta a tag de vídeo.
-  </video>
-  </body>
+
+  <h1>Roteiro – Vídeo-Resenha</h1>
+  <h2>“Obrigado por Fumar” (2007)</h2>
+  <p class="info-disciplina"><strong>Disciplina:</strong> Geografia das Indústrias &nbsp;|&nbsp; <strong>Aluno:</strong> Alan Dutra</p>
+
+  <div class="media-container">
+    <h3>Assista o Filme</h3>
+    <div class="video-responsive-container">
+      <video controls>
+        <source src="https://ia600606.us.archive.org/12/items/ObrigadoporFumar/ObrigadoporFumar.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
+  </div>
+
+  <div class="media-container">
+    <h3>Resenha - Vídeo/Áudio</h3>
+    <div class="video-responsive-container">
+      <video controls>
+        <source src="seu_video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[0:00 – 0:40] Abertura / Gancho</p>
+    <p>Você já parou pra pensar como alguém pode defender o cigarro em rede nacional… e ainda sair aplaudido? Pois é, Nick Naylor, o protagonista de <em>Obrigado por Fumar</em>, não só faz isso, como se orgulha disso. Mas o que está por trás desse talento em distorcer os fatos nos ajuda a entender algo muito maior: como funcionam as indústrias no capitalismo globalizado.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[0:41 – 1:20] Apresentação do Filme</p>
+    <p>Lançado em 2007 e dirigido por Jason Reitman, <em>Obrigado por Fumar</em> acompanha Nick, um lobista carismático da indústria do tabaco. Sua função? Defender uma mercadoria letal — o cigarro — em nome da liberdade de escolha do consumidor. Com humor ácido e ironia, o filme expõe o poder dos discursos, das estratégias de marketing e da manipulação da informação.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[1:21 – 2:30] Conflito e Crítica</p>
+    <p>O conflito central do filme está na tensão entre saúde pública e lucro corporativo. Nick representa uma indústria que terceiriza a responsabilidade: não são os cigarros que matam, mas sim quem escolhe fumar. Essa lógica é muito parecida com o que vimos nos textos discutidos em sala, especialmente com Lipietz e Benko, ao falarem sobre a reestruturação produtiva e a acumulação flexível.</p>
+    <p>O foco não é mais só produzir bens materiais, mas sim produzir significados, influenciar decisões e moldar a opinião pública. A indústria do tabaco aqui é apenas o exemplo mais escancarado de uma lógica muito mais ampla do capitalismo contemporâneo.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[2:31 – 4:10] Geografia das Indústrias</p>
+    <p><em>Obrigado por Fumar</em> se conecta com os temas da Geografia das Indústrias de várias formas. Primeiro, ele mostra como o setor terciário – especialmente os serviços de comunicação, advocacia e relações públicas – está cada vez mais central na lógica produtiva.</p>
+    <p>Segundo, vemos a globalização da indústria do tabaco. Ela opera em várias escalas: produz em países com menos regulação, vende onde ainda há demanda, e atua fortemente no lobby político para evitar restrições legais. Isso lembra os conceitos da localização industrial e dos distritos produtivos discutidos por Markusen.</p>
+    <p>Terceiro, o filme revela o esvaziamento da produção material em favor da manipulação simbólica – algo típico do mundo pós-fordista analisado por Lipietz. A indústria aqui não vende só cigarros, ela vende discursos, liberdade e até dúvida sobre os fatos científicos.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[4:11 – 5:20] Personagens e Representações</p>
+    <p>Nick Naylor é quase uma caricatura do trabalhador do século XXI: flexível, retórico, fluido. Ele se encaixa perfeitamente no modelo de acumulação flexível de Benko. O próprio fato de ele mudar de setor ao final do filme – indo para o lobby da indústria de celulares – mostra como a lógica é a mesma: onde houver um produto controverso, haverá alguém para defendê-lo com palavras bem escolhidas.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[5:21 – 6:20] Conclusão</p>
+    <p>No fim, <em>Obrigado por Fumar</em> não é apenas sobre cigarros. É sobre como as grandes corporações operam, como moldam o discurso, terceirizam responsabilidades e se reinventam para continuar lucrando. E mais: é um alerta de como a indústria não é mais apenas o que se fabrica, mas o que se comunica.</p>
+    <p>Em tempos de fake news, greenwashing e lobbies farmacêuticos, entender a lógica por trás do filme é essencial para compreender a dinâmica industrial e econômica do nosso tempo.</p>
+  </div>
+
+  <div class="bloco">
+    <p class="tempo">[6:21 – 6:40] Fechamento</p>
+    <p>Se você gostou dessa análise, recomendo que assista ao filme com um novo olhar. E lembre-se: nem todo produto que mata vem com caveira na embalagem — às vezes, vem com um bom discurso.</p>
+    <p>Obrigado por assistir!</p>
+  </div>
+
+  <footer>
+    Roteiro desenvolvido para a disciplina de Geografia das Indústrias – UEM – 2025.<br>
+    Este site será desativado em 01/01/2026!
+  </footer>
+
+</body>
 </html>
